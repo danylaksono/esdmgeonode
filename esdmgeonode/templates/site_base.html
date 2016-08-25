@@ -1,2 +1,7 @@
 {% extends "base.html" %}
-<link href="{{ STATIC_URL }}css/bootstrap.min.css"> rel="stylesheet"/>
+{% block extra_head %}
+       <link href="{{ STATIC_URL }}css/site_base.css" rel="stylesheet"/>
+	   <link href="{{ STATIC_URL }}img/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+	   <!--link href="{{ STATIC_URL }}css/bootstrap.css" rel="stylesheet"/-->
+   {% endblock %}
+
