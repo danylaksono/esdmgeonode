@@ -1,14 +1,74 @@
 {% extends 'index.html' %}
 {% load i18n %}
-{% comment %}
-This is where you can override the hero area block. You can simply modify the content below or replace it wholesale to meet your own needs. 
-{% endcomment %}
-  {% block hero %}
-  <div class="jumbotron">
+{% load base_tags %}
+
+{% block title %} {% trans "ESDM Spatial Data Hosting" %}  {% endblock %}
+
+{% block body_class %}home{% endblock %}
+
+{% block middle %}
+    {% block hero %}
+        <div class="jumbotron">
+        <div class="container">
+            <h1>PortalGIS Kementrian ESDM</h1>
+            <p>Portal tukar-guna data spasial Kementrian ESDM</p>
+            <span>Website Kementrian ESDM <a href="http://esdm.go.id"></a></span>
+        </div>
+        </div>
+    {% endblock %}
+    
+    {% block mainbody %}
     <div class="container">
-      <h1>{% trans "PortalGIS Kementrian ESDM" %}</h1>
-      <p>{% blocktrans %}Portal tukar-guna data spasial Kementrian ESDM{% endblocktrans %}</p>
-      <span>{% trans 'Website Kementrian ESDM' %} <a href="http://esdm.go.id"></a></span>
+        <div class="row home-facets">
+            <!-- ========= CIRCLES =========== -->
+                <section class="section section-margin">
+                    <div class="container">
+                        <div class="row">
+                             <div class="col-lg-4 col-sm-4 col-xs-12">
+                                <div class="infobox center">
+                                    <div class="circle"><a href="/layers/" style="font-size: xx-large;"><i class="fa fa-map-o fa-4x"></i></a></div>
+                                    <h5>Geoportal Layers</h5>
+                                    <h4><a href="/layers/">167 Layers</a></h4>
+                                    <p>Geoportal memiliki kemampuan untuk membatasi siapa yang dapat melihat, mengedit, dan mengelola lapisan (Layers).</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-sm-4 col-xs-12">
+                                <div class="infobox center">
+                                    <div class="circle"><a href="/maps/" style="font-size: xx-large;"><i class="fa fa-group fa-4x"></i></a></div>
+                                    <h5>Geoportal Maps</h5>
+                                    <h4><a href="/maps/">5 Maps</a></h4>
+                                    <p>Kumpulan dari berbagai macam layers yang terdapat pada Geoportal ataupun pada link Web Map Service </p>
+                                </div>
+                            </div>
+                             <div class="col-lg-4 col-sm-4 col-xs-12">
+                                <div class="infobox center">
+                                    <div class="circle"><a href="/interactive/" style="font-size: xx-large;"><i class="fa fa-gears fa-4x"></i></a></div>
+                                    <h5>Geoportal Interaktif</h5>
+                                    <h4><a href="/interactive/">Peta Interaktif</a></h4>
+                                    <p>Kumpulan semua layers yang telah di kategorikan sesuai masing-masing tema.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- ========= END ========= -->
+        </div>
+    </div>
+    {% endblock %}
+    
+    
+{% endblock middle %}
+
+{% block footer %}
+<footer class="footer footer-inverse">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <p> Portal Hosting Data Spasial ESDM &copy;2016
+        <a href="{% url "about" %}">{% trans "Pusdatin ESDM" %}</a>
+      </div>
     </div>
   </div>
-  {% endblock %}
+</footer>
+{% endblock footer %}
+
